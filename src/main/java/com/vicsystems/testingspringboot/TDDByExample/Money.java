@@ -6,7 +6,8 @@ public class Money {
 
     public boolean equals(Object object) {
         Money money = (Money) object;
-        return amount == money.amount;
+        //NO es lo mismo 5 francos que 5 dolares y en el equals la prueba no pasa porque les dice que son iguales para evitar eso se hace el sgte codigo
+        return amount == money.amount && this.getClass().equals(object.getClass());
     }
 
 }
