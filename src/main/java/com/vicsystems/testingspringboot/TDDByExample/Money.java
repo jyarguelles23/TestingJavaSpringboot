@@ -2,7 +2,7 @@ package com.vicsystems.testingspringboot.TDDByExample;
 
 import java.util.Map;
 
-public abstract class Money {
+public class Money {
 
     protected int amount;
     protected String currency;
@@ -11,7 +11,9 @@ public abstract class Money {
         this.amount = amount;
         this.currency=currency;
     }
-    public abstract Money times(int amount);
+    public  Money times(int multiplier){
+        return new Money(amount * multiplier, this.currency);
+    };
 
    public String currency(){
         return currency;
@@ -27,8 +29,14 @@ public abstract class Money {
 
     public boolean equals(Object object) {
         Money money = (Money) object;
-        //NO es lo mismo 5 francos que 5 dolares y en el equals la prueba no pasa porque les dice que son iguales para evitar eso se hace el sgte codigo
-        return amount == money.amount && this.getClass().equals(object.getClass());
+        return amount == money.amount && this.currency==money.currency;
     }
 
+    @Override
+    public String toString() {
+        return "Money{" +
+                "amount=" + amount +
+                ", currency='" + currency + '\'' +
+                '}';
+    }
 }
