@@ -2,7 +2,7 @@ package com.vicsystems.testingspringboot.TDDByExample;
 
 import java.util.Map;
 
-public class Money {
+public class Money implements Expression  {
 
     protected int amount;
     protected String currency;
@@ -38,5 +38,9 @@ public class Money {
                 "amount=" + amount +
                 ", currency='" + currency + '\'' +
                 '}';
+    }
+
+    public Expression plus(Money addend){
+       return new Money(amount + addend.amount,currency);
     }
 }

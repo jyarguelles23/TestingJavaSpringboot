@@ -1,5 +1,7 @@
 package com.vicsystems.testingspringboot;
 
+import com.vicsystems.testingspringboot.TDDByExample.Bank;
+import com.vicsystems.testingspringboot.TDDByExample.Expression;
 import com.vicsystems.testingspringboot.TDDByExample.Money;
 import org.junit.jupiter.api.Test;
 
@@ -32,4 +34,13 @@ public class MoneyTest {
         assertEquals("USD",Money.dollar(1).currency());
         assertEquals("CHF",Money.franc(1).currency());
     }
+
+    @Test
+    void testSimpleAddition(){
+        Money five = Money.dollar(5);
+        Expression sum=five.plus(five);
+        Bank bank= new Bank();
+        Money reduced = bank.reduce(sum,"USD");
+        assertEquals(Money.dollar(10),reduced);
+     }
 }
