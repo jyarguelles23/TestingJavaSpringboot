@@ -1,4 +1,4 @@
-package com.vicsystems.testingspringboot.model;
+package com.vicsystems.testingspringboot.Model;
 
 import java.util.HashSet;
 import java.util.Set;
