@@ -1,6 +1,7 @@
 package com.vicsystems.testingspringboot.Controllers;
 
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -14,6 +15,7 @@ class IndexControllerTest {
         controller=new IndexController();
     }
 
+    @DisplayName("Testing index Method")
     @Test
     void index() {
         //assertEquals("index",controller.index());
@@ -21,6 +23,7 @@ class IndexControllerTest {
         assertEquals("index",controller.index(), () -> "This is some expensive message");
     }
 
+    @DisplayName("Test OupsHandlerException")
     @Test
     void oupsHandler() {
         assertTrue("notimplemented".equals(controller.oupsHandler()), () -> "This is some expensive message");
