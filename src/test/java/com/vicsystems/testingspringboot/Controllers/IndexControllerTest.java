@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Test;
 import java.time.Duration;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assumptions.assumeTrue;
 
 //Junit Assertions
 class IndexControllerTest {
@@ -56,5 +57,16 @@ class IndexControllerTest {
             Thread.sleep(5000);
             System.out.println("Ejecute 1232312321312");
         });
+    }
+
+    //Leer mas sobre assume TRue ya que retorna un optional
+    @Test
+    void testAssumptionTrue() {
+     assumeTrue("Yasser".equalsIgnoreCase("Jesus"));
+    }
+
+    @Test
+    void testAssumptionTrueIsTrue() {
+        assumeTrue("Yasser".equalsIgnoreCase("Yasser"));
     }
 }
