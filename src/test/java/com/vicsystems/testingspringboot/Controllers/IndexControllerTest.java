@@ -10,7 +10,7 @@ import java.time.Duration;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assumptions.assumeTrue;
 
-//Junit Assertions
+/*Ver tambien como se hacen las pruebas en DEV o Prod y con Jenkins o Circle CI*/
 class IndexControllerTest {
 
     IndexController controller;
@@ -98,4 +98,7 @@ class IndexControllerTest {
     @Test
     void testMeIfUserFred() {
     }
+
+
+
 }
