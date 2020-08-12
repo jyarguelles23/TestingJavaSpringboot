@@ -28,8 +28,7 @@ class IndexControllerTest {
     @DisplayName("Test OupsHandlerException")
     @Test
     void oupsHandler() {
-
-        //   assertTrue("notimplemented".equals(controller.oupsHandler()), () -> "This is some expensive message");
+        assertTrue("notimplemented".equals(controller.oupsHandler()), () -> "This is some expensive message");
     }
 
     @DisplayName("Test OupsHandlerException2")
