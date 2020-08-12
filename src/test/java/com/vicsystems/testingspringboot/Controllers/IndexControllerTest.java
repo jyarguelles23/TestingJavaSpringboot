@@ -3,6 +3,7 @@ package com.vicsystems.testingspringboot.Controllers;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.condition.*;
 
 import java.time.Duration;
 
@@ -29,7 +30,7 @@ class IndexControllerTest {
     @DisplayName("Test OupsHandlerException")
     @Test
     void oupsHandler() {
-        assertTrue("notimplemented".equals(controller.oupsHandler()), () -> "This is some expensive message");
+     //   assertTrue("notimplemented".equals(controller.oupsHandler()), () -> "This is some expensive message");
     }
 
     @DisplayName("Test OupsHandlerException2")
@@ -52,7 +53,8 @@ class IndexControllerTest {
 
     @Test
     void TestTimeOutPrempt()
-    {//Este es multihilo por lo q no espera los 5 segundos para ejecutarse
+    {
+        //Este es multihilo por lo q no espera los 5 segundos para ejecutarse
         assertTimeoutPreemptively(Duration.ofMillis(100),() -> {
             Thread.sleep(5000);
             System.out.println("Ejecute 1232312321312");
@@ -68,5 +70,32 @@ class IndexControllerTest {
     @Test
     void testAssumptionTrueIsTrue() {
         assumeTrue("Yasser".equalsIgnoreCase("Yasser"));
+    }
+    @EnabledOnOs(OS.MAC)
+    @Test
+    void testMeOnMacOS() {
+    }
+    @EnabledOnOs(OS.WINDOWS)
+    @Test
+    void testMeOnWindows() {
+
+    }
+    @EnabledOnJre(JRE.JAVA_8)
+    @Test
+    void testMeOnJava8() {
+    }
+    @EnabledOnJre(JRE.JAVA_11)
+    @Test
+    void testMeOnJava11() {
+    }
+ /*Ver como se hace este en windows*/
+    @EnabledIfEnvironmentVariable(named = "USER",matches = "yasser")
+    @Test
+    void testMeIfUserYasser() {
+    }
+
+    @EnabledIfEnvironmentVariable(named = "USER",matches = "Fred")
+    @Test
+    void testMeIfUserFred() {
     }
 }
