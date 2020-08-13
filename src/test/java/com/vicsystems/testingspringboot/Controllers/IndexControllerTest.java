@@ -2,6 +2,7 @@ package com.vicsystems.testingspringboot.Controllers;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.condition.*;
 
@@ -12,6 +13,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assumptions.assumeTrue;
 
 /*Ver tambien como se hacen las pruebas en DEV o Prod y con Jenkins o Circle CI*/
+@Tag("controller")
 class IndexControllerTest {
 
     IndexController controller;
