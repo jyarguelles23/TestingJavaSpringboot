@@ -1,5 +1,6 @@
 package com.vicsystems.testingspringboot.Controllers;
 
+import com.vicsystems.testingspringboot.ControllerTests;
 import com.vicsystems.testingspringboot.Model.Speciality;
 import com.vicsystems.testingspringboot.Model.Vet;
 import com.vicsystems.testingspringboot.Services.SpecialtyService;
@@ -16,8 +17,8 @@ import java.util.Set;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
-@Tag("controller")
-class VetControllerTest {
+//@Tag("controller")
+class VetControllerTest implements ControllerTests {
 
     VetService service;
     SpecialtyService specialtyService;

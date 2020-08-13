@@ -1,5 +1,6 @@
 package com.vicsystems.testingspringboot.Controllers;
 
+import com.vicsystems.testingspringboot.ControllerTests;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
@@ -13,8 +14,8 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assumptions.assumeTrue;
 
 /*Ver tambien como se hacen las pruebas en DEV o Prod y con Jenkins o Circle CI*/
-@Tag("controller")
-class IndexControllerTest {
+//@Tag("controller")
+class IndexControllerTest implements ControllerTests {
 
     IndexController controller;
     @BeforeEach
