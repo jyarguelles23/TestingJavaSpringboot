@@ -2,6 +2,7 @@ package com.vicsystems.testingspringboot.Model;
 
 import com.vicsystems.testingspringboot.ModelTests;
 import com.vicsystems.testingspringboot.fauxspring.Model;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -32,7 +33,8 @@ class OwnerTest implements ModelTests {
         assertThat(owner.getCity(), is("Key West"));
     }
 
-    @ParameterizedTest
+    @DisplayName("Value Source Test")
+    @ParameterizedTest(name = "{displayName} - [{index}] {arguments}")
     @ValueSource(strings ={"Spring","Boot","Framework"})
     void testValueSource(String val){
         System.out.println(val);
