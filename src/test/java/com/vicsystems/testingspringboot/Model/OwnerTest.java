@@ -1,5 +1,6 @@
 package com.vicsystems.testingspringboot.Model;
 
+import com.vicsystems.testingspringboot.CustomArgsProvider;
 import com.vicsystems.testingspringboot.ModelTests;
 import com.vicsystems.testingspringboot.fauxspring.Model;
 import org.junit.jupiter.api.DisplayName;
@@ -81,4 +82,14 @@ class OwnerTest implements ModelTests {
                 Arguments.of("FL",1,1),
                 Arguments.of("HAB",5,2));
     }
+
+
+    @DisplayName("Custom Provider Source Test")
+    @ParameterizedTest(name = "{displayName} - [{index}] {arguments}")
+    @ArgumentsSource(CustomArgsProvider.class)
+    void fromCustomMethodTest(String stateName,int val1,int val2){
+        System.out.println(stateName+" : "+ val1+ " : "+ val2);
+    }
+
+
 }
