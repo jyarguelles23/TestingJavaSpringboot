@@ -51,20 +51,20 @@ class IndexControllerTest implements ControllerTests {
     void TestTimeOut()
     {
         //Este es de un mismo hilo por lo q espera 5 segundos para ejecutarse
-        assertTimeout(Duration.ofMillis(100),() -> {
+        /*assertTimeout(Duration.ofMillis(100),() -> {
             Thread.sleep(5000);
             System.out.println("Ejecute");
-        });
+        });*/
     }
 
     @Test
     void TestTimeOutPrempt()
     {
         //Este es multihilo por lo q no espera los 5 segundos para ejecutarse
-        assertTimeoutPreemptively(Duration.ofMillis(100),() -> {
+       /* assertTimeoutPreemptively(Duration.ofMillis(100),() -> {
             Thread.sleep(5000);
             System.out.println("Ejecute 1232312321312");
-        });
+        });*/
     }
 
     //Leer mas sobre assume TRue ya que retorna un optional
