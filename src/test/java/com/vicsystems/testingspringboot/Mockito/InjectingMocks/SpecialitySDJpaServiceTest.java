@@ -23,7 +23,15 @@ class SpecialitySDJpaServiceTest {
     @InjectMocks
     SpecialitySDJpaService service;
 
+    //Argument Matchers por el any hay para todo tipo de datos
+    @Test
+    void DeleteByObject(){
+        Speciality speciality=new Speciality();
+        service.delete(speciality);
+        verify(specialtyRepository).delete(any(Speciality.class));
+    }
 
+    //Returning values from repositories
     @Test
     void FindById(){
         Speciality speciality=new Speciality();
