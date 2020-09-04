@@ -8,6 +8,7 @@ import com.vicsystems.testingspringboot.fauxspring.Model;
 import com.vicsystems.testingspringboot.fauxspring.ModelAndView;
 import com.vicsystems.testingspringboot.fauxspring.WebDataBinder;
 
+import javax.validation.Valid;
 import java.util.List;
 
 
@@ -64,7 +65,7 @@ public class OwnerController {
         return VIEWS_OWNER_CREATE_OR_UPDATE_FORM;
     }
 
-    public String processCreationForm( Owner owner, BindingResult result) {
+    public String processCreationForm(@Valid Owner owner, BindingResult result) {
         if (result.hasErrors()) {
             return VIEWS_OWNER_CREATE_OR_UPDATE_FORM;
         } else {
@@ -78,7 +79,7 @@ public class OwnerController {
         return VIEWS_OWNER_CREATE_OR_UPDATE_FORM;
     }
 
-    public String processUpdateOwnerForm(Owner owner, BindingResult result, Long ownerId) {
+    public String processUpdateOwnerForm(@Valid Owner owner, BindingResult result, Long ownerId) {
         if (result.hasErrors()) {
             return VIEWS_OWNER_CREATE_OR_UPDATE_FORM;
         } else {

@@ -181,7 +181,7 @@ class SpecialitySDJpaServiceTest {
         assertThat(returnedSpecialty.getId()).isEqualTo(1L);
     }
 
-    @Test
+   /* @Test
     void testSaveLambdaNoMatch() {
         //given
         final String MATCH_ME = "MATCH_ME";
@@ -199,6 +199,6 @@ class SpecialitySDJpaServiceTest {
 
         //then
         assertNull(returnedSpecialty);
-    }
+    }*/
 
 }
