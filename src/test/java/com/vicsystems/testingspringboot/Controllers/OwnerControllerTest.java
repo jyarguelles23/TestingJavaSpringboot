@@ -139,7 +139,7 @@ class OwnerControllerTest {
 
         //then
         assertThat("%Buck%").isEqualToIgnoringCase(stringArgumentCaptor.getValue());
-    }*/
+    }
 
     @Test
     void processCreationFormHasErrors() {
@@ -163,6 +163,6 @@ class OwnerControllerTest {
         //then
         assertThat(viewName).isEqualToIgnoringCase("redirect:/owners/5");
 
-    }
+    }*/
 
 }
